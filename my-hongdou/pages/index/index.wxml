@@ -1,13 +1,27 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
     <view class="top">
         <view class="con">
             <view class="left tab">
-               <view class="tab-item">123</view>
-               <view class="tab-item">123</view>
-               <view class="tab-item">123</view>
+                <view wx:for="{{tabItems}}" class="tab-item {{activeIndex==index?'active':''}}" wx:key="index" bindtap="change" data-index="{{index}}">
+                    {{item}}
+                </view>
+                <!-- <view class="tab-item {{activeIndex==0?'active':''}}">123</view>
+               <view class="tab-item {{activeIndex==1?'active':''}}">123</view>
+               <view class="tab-item {{activeIndex==2?'active':''}}">123</view> -->
             </view>
-            <view class="right search"></view>
+            <view class="right search" bindtap='search'>
+                <text>输入ID/昵称</text>
+                <icon type="search" size="23" color="#FFF" />
+            </view>
         </view>
     </view>
+    <scroll-view class="scroll-list" scroll-y="{{true}}" >
+        <view class="list-w" wx:if="{{listItems}}">
+            <view class="item" wx:for="{{listItems}}"></view>
+        </view>
+        <view class="no" wx:else>
+            
+        </view>
+    </scroll-view>
 </view>
