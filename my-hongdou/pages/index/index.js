@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+var util = require('../../utils/util.js')
 
 Page({
     data: {
@@ -8,21 +9,23 @@ Page({
         hasUserInfo: false,
         // canIUse: wx.canIUse('button.open-type.getUserInfo')
     },
-
+    
     onLoad: function() {
-        if (app.globalData.userInfo) {
-            this.setData({
-                userInfo: app.globalData.userInfo,
-                hasUserInfo: true
-            })
-        } else {
-            setTimeout(() => {
-                wx.navigateTo({
-                    url: '../login/login',
-                })
-            },1000)
+        console.log(util.checkLogin())
+        // if (app.globalData.userInfo) {
+        //     this.setData({
+        //         userInfo: app.globalData.userInfo,
+        //         hasUserInfo: true
+        //     })
+            
+        // } else {
+        //     setTimeout(() => {
+        //         wx.navigateTo({
+        //             url: '../login/login',
+        //         })
+        //     },1000)
 
-        }
+        // }
     }
 })
 

@@ -38,7 +38,7 @@ Page({
             wx.setStorageSync('avatarUrl', e.detail.userInfo.avatarUrl)
             setTimeout(() => {
                 wx.hideLoading()
-                wx.navigateTo({
+                wx.switchTab({
                     url: '../index/index',
                 })
             }, 100)

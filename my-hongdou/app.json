@@ -1,13 +1,36 @@
 {
     "pages": [
+        "pages/index/index",
         "pages/login/login",
-        "pages/index/index"
+        "pages/msg/msg",
+        "pages/me/me"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "index",
+        "navigationBarTitleText": "红豆",
         "navigationBarTextStyle": "black"
     },
-    "sitemapLocation": "sitemap.json"
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "home",
+                "iconPath": "./img/tabbar_home.png",
+                "selectedIconPath": "./img/tabbar_home_active.png"
+            },
+            {
+                "pagePath": "pages/msg/msg",
+                "text": "Message",
+                "iconPath": "./img/tabbar_msg.png",
+                "selectedIconPath": "./img/tabbar_msg_active.png"
+            },{
+                "pagePath": "pages/me/me",
+                "text": "Me",
+                "iconPath": "./img/tabbar_home.png",
+                "selectedIconPath": "./img/tabbar_home_active.png"
+            }
+        ]
+    }
 }

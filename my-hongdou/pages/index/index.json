@@ -1,5 +1,6 @@
 {
   "usingComponents": {},
+  "navigationBarBackgroundColor": "#F5576C",
   "tabBar": {
     "list": [{
       "pagePath": "pagePath",
