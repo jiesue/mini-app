@@ -1,5 +1,0 @@
-function checkLogin(){
-    return 'jie'
-}
-
-

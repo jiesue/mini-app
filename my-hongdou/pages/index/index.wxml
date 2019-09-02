@@ -1,4 +1,13 @@
 <!--index.wxml-->
 <view class="container">
-  
+    <view class="top">
+        <view class="con">
+            <view class="left tab">
+               <view class="tab-item">123</view>
+               <view class="tab-item">123</view>
+               <view class="tab-item">123</view>
+            </view>
+            <view class="right search"></view>
+        </view>
+    </view>
 </view>
