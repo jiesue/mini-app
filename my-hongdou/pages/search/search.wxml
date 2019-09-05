@@ -1,0 +1,16 @@
+<!--pages/search/search.wxml-->
+<view class="input-area">
+    <view class="input-w">
+        <icon size="15" type="search"></icon>
+        <input auto-focus placeholder="请输入房间昵称/ID" value="{{input}}" bindinput="input" />
+        <icon type="clear" size="15" bindtap="clear"></icon>
+    </view>
+    <button class="{{btnActive ? 'active' : ''}}" bindtap="search">搜索</button>
+</view>
+<view class="history" wx:if="{{showHistory}}">
+    <text class="title">历史记录</text>
+    <view class="history-list">
+        <view class="item" wx:for="{{history}}">{{item}}</view>
+    </view>
+</view>
+<searchResult list="{{list}}" wx:ifelse></searchResult>

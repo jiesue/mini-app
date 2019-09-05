@@ -1,0 +1,12 @@
+/* components/searchResult.wxss */
+.list{
+    width: 100%;
+    height: auto;
+    margin-top:15rpx;
+}
+.item{
+    width: 100%;
+    height: 100rpx;
+    background: rgb(218, 133, 133);
+    border-bottom: 1rpx solid #eee;
+}

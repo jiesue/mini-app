@@ -17,6 +17,10 @@ App({
     },
     onShow: function(options) {
         console.log(wx.getLaunchOptionsSync())
+        wx.setTabBarBadge({
+            index: 1,
+            text: '99+'
+        })
        
     },
     globalData: {

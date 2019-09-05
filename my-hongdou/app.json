@@ -1,9 +1,12 @@
 {
     "pages": [
+        "pages/search/search",
         "pages/index/index",
         "pages/login/login",
         "pages/msg/msg",
         "pages/me/me"
+      
+
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -11,7 +14,6 @@
         "navigationBarTitleText": "红豆",
         "navigationBarTextStyle": "black"
     },
-    "sitemapLocation": "sitemap.json",
     "tabBar": {
         "list": [
             {
