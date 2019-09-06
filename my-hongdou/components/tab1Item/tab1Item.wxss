@@ -1,0 +1,15 @@
+/* components/tab1Item/tab1Item.wxss */
+
+
+.item {
+    display: inline-block;
+    width: 336rpx;
+    height: 336rpx;
+    border-radius: 32rpx;
+    box-sizing: border-box;
+    background: #eee;
+    margin-top: 18rpx;
+    margin: 18rpx;
+    text-align: center;
+    line-height: 336rpx;
+}

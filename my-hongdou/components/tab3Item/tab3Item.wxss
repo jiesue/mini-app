@@ -1,0 +1,13 @@
+/* components/tab3Item.wxss */
+
+.item {
+    width: 690rpx;
+    height: 140rpx;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 24rpx;
+    margin: auto;
+    margin-top:22rpx;
+    text-align: center;
+    line-height: 140rpx;
+}

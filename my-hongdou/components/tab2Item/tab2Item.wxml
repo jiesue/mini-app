@@ -1,0 +1,6 @@
+<block wx:for="{{list}}"  wx:key="index">
+    <view class="item" bindtap="goInVideo" data-id="{{index}}">
+        {{index}}+{{item}}
+    </view>
+</block>
+

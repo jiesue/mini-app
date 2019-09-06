@@ -1,0 +1,6 @@
+<!--components/tab3Item.wxml-->
+<block wx:for="{{list}}"  wx:key="index">
+    <view class="item">
+        {{index}}+{{item}}
+    </view>
+</block>
