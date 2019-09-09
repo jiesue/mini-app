@@ -1,0 +1,4 @@
+/* pages/video/video.wxss */
+.section{
+    text-align: center;
+}

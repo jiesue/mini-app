@@ -1,0 +1,4 @@
+<!--components/searchResult.wxml-->
+<view wx:for="{{list}}" class="list" wx:key="index">
+    <view class="item">{{item}}</view> 
+</view>

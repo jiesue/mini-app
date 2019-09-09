@@ -1,0 +1,141 @@
+/**index.wxss**/
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border:1px solid red; */
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180rpx;
+    background: #f5576c;
+    border-radius: 0px 0rpx 40rpx 40rpx;
+}
+
+.top .con {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 62rpx;
+    padding: 0rpx 30rpx 0 30rpx;
+    box-sizing: border-box;
+}
+
+.top .left {
+    display: flex;
+    justify-content: space-around;
+    /* width: 200rpx; */
+    height: 100%;
+}
+
+.top .left .tab-item {
+    width: 100rpx;
+    height: 100%;
+    text-align: center;
+    font-size: 34rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(255, 218, 218, 1);
+    line-height: 62rpx;
+    text-align: center;
+    padding-right: 10rpx;
+}
+
+.top .left .tab-item.active {
+    font-size: 42rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+}
+
+.top .right {
+    height: 100%;
+    width: 100rpx;
+}
+
+.top .right {
+    position: relative;
+    width: 300rpx;
+    height: 62rpx;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 31rpx;
+}
+
+.top .right text {
+    position: absolute;
+    top: 14rpx;
+    left: 15rpx;
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(255, 197, 197, 1);
+}
+
+.top .right icon {
+    position: absolute;
+    top: 12rpx;
+    right: 28rpx;
+}
+
+.swiper-w {
+    position: absolute;
+    top: 100rpx;
+    left: 0;
+    bottom: 0rpx;
+    height: auto;
+    width: 100%;
+    /* border: 1rpx solid red; */
+    box-sizing: border-box;
+}
+
+.swiper-item {
+    position: absolute;
+    left: 0;
+    bottom: 0rpx;
+    height: 100%;
+    /* border: 1rpx solid red; */
+    box-sizing: border-box;
+}
+
+.scroll-list {
+    position: absolute;
+    top: 0rpx;
+    left: 0;
+    bottom: 0rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.scroll-list3 {
+    top: 140rpx;
+}
+
+.list-w {
+    text-align: center;
+    padding-bottom: 14rpx;
+}
+
+.list-w .item {
+    width: 336rpx;
+    height: 336rpx;
+    border-radius: 32rpx;
+    box-sizing: border-box;
+    background: #eee;
+    margin-top: 18rpx;
+    text-align: center;
+    line-height: 336rpx;
+}
+
+.innerTab {
+    width: 690rpx;
+    height: 132rpx;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 1rpx 9rpx 13rpx 0rpx rgba(159, 159, 159, 0.09);
+    border-radius: 30rpx;
+    margin: auto;
+}

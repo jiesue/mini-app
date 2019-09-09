@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "tab1Item": "../components/tab1Item/tab1Item",
+        "tab2Item": "../components/tab2Item/tab2Item",
+        "tab3Item": "../components/tab3Item/tab3Item"
+    },
+    "navigationBarBackgroundColor": "#F5576C"
+  
+}
