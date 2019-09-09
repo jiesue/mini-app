@@ -7,12 +7,12 @@ function getRandomColor() {
     }
     return '#' + rgb.join('')
 }
-
+import{videoUrl} from '../../config/baseUrl.js'
 Page({
     onLoad(options){
         console.log(options)
         this.setData({
-            src: `../../video/${parseInt(options.id)+1}.mp4`
+          src: `${videoUrl}/mp4/${parseInt(options.id)+1}.mp4`
         })
     },
     onReady: function (res) {
