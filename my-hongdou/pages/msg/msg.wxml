@@ -1,5 +1,14 @@
-<view class="msgList" wx:for="{{list}}" wx:key="{{index}}">
-  <view class="item" bindtap="toChat" data-id="{{index}}">
-    {{item}}
-  </view>
+<view class="msg">
+    <view class="addFriend">
+        <text> id:</text>
+        <input value="{{account}}" bindinput="accountInput"></input>
+        <text> ps:</text>
+        <input value="{{ps}}" bindinput="psInput"></input>
+        <button bindtap="addFriend" type="warn">添加好友</button>
+    </view>
+    <view class="msgList" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="item" bindtap="toChat" data-id="{{item.account}}">
+           好友account： {{item.account}}
+        </view>
+    </view>
 </view>
