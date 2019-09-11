@@ -35,6 +35,7 @@ Page({
         console.log(e)
         if (e.detail.userInfo) {
             app.globalData.userInfo = e.detail.userInfo;
+            console.log(app.globalData.userInfo)
             wx.setStorageSync('avatarUrl', e.detail.userInfo.avatarUrl)
             setTimeout(() => {
                 wx.hideLoading()

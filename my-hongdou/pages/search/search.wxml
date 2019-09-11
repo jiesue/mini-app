@@ -7,10 +7,10 @@
     </view>
     <button class="{{btnActive ? 'active' : ''}}" bindtap="search">搜索</button>
 </view>
-<view class="history" wx:if="{{showHistory}}">
+<view class="history" wx:if="{{showHistory}}" >
     <text class="title">历史记录</text>
     <view class="history-list">
-        <view class="item" wx:for="{{history}}">{{item}}</view>
+        <view class="item" wx:for="{{history}}" wx:key="{{index}}">{{item}}</view>
     </view>
 </view>
 <searchResult list="{{list}}" wx:ifelse></searchResult>

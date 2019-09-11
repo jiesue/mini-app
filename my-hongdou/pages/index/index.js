@@ -29,22 +29,25 @@ Page({
     },
     search() {
         console.log('search')
+        wx.navigateTo({
+            url: '../search/search'
+        })
     },
     onLoad: function() {
         console.log(util.checkLogin())
-        // if (app.globalData.userInfo) {
-        //     this.setData({
-        //         userInfo: app.globalData.userInfo,
-        //         hasUserInfo: true
-        //     })
+        if (app.globalData.userInfo) {
+            this.setData({
+                userInfo: app.globalData.userInfo,
+                hasUserInfo: true
+            })
 
-        // } else {
-        //     setTimeout(() => {
-        //         wx.navigateTo({
-        //             url: '../login/login',
-        //         })
-        //     },1000)
+        } else {
+            setTimeout(() => {
+                wx.navigateTo({
+                    url: '../login/login',
+                })
+            },1000)
 
-        // }
+        }
     }
 })

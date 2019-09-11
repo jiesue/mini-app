@@ -21,6 +21,12 @@ Component({
      * 组件的方法列表
      */
     methods: {
-
+        goAudio(e){
+            console.log(e.currentTarget.dataset.id)
+            let id = e.currentTarget.dataset.id
+            wx.navigateTo({
+                url: '../audio/audio?id=' + id,
+            })
+        }   
     }
 })

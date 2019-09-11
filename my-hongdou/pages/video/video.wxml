@@ -6,5 +6,6 @@
         <button bindtap="bindButtonTap">获取视频</button>
         <input bindblur="bindInputBlur" />
         <button bindtap="bindSendDanmu">发送弹幕</button>
+        <button bindtap="download">download</button>
     </view>
 </view>

@@ -1,2 +1,11 @@
-<!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<view class="me">
+    <view class="top-bg">
+    </view>
+    <view class="info-w">
+        <view class="avatar-w"> <image></image> </view>
+        <view class="text-w"></view>
+        <view class="operate"></view>
+    </view>
+    <view class="menu"></view>
+
+</view>

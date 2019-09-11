@@ -1,12 +1,12 @@
 {
     "pages": [
-       
+       "pages/me/me",
         "pages/index/index",
+        "pages/audio/audio",
         "pages/video/video",
         "pages/search/search",
         "pages/login/login",
-        "pages/msg/msg",
-        "pages/me/me"
+        "pages/msg/msg"
         
     ],
     "window": {

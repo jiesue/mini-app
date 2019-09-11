@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+    "usingComponents": {},
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0f0",
+    "navigationBarTitleText": "音频播放",
+    "navigationBarTextStyle": "white"
 }
