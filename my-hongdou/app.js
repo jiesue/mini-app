@@ -21,10 +21,22 @@ App({
             index: 1,
             text: '99+'
         })
-       
+
+    },
+    pushMsg(msgs) {
+        if (!Array.isArray(msgs)) {
+            msgs = [msgs];
+        }
+        var sessionId = msgs[0].sessionId;
+        // this.globalData.chatData.msgs = this.globalData.chatData.msgs || {};
+        this.globalData.chatData.msgs[sessionId] = this.globalData.nim.mergeMsgs(this.globalData.chatData.msgs[sessionId], msgs);
+        console.log(this.globalData)
     },
     globalData: {
         userInfo: null,
-        nim:null
+        nim: null,
+        chatData: {
+            msgs:{}
+        }
     }
 })

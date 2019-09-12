@@ -1,8 +1,8 @@
 <!--pages/chat/chat.wxml-->
 <view class="chat-container">
   <scroll-view class="chatList-w" scroll-y="true">
-    <view class="item {{item.isAns?'left':'right'}}" wx:for="{{list}}" wx:key="{{index}}">
-      <block wx:if="{{item.isAns}}">
+    <view class="item {{item.flow=='in'?'left':'right'}}" wx:for="{{list}}" wx:key="{{index}}">
+      <block wx:if="{{item.flow=='in'}}">
         <view class="avatar-w">
           <image src="{{avatarUrl+'/'+(index+1)+'.png'}}"></image>
         </view>

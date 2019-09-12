@@ -21,7 +21,6 @@ Page({
         })
     },
     input(e) {
-        console.log(e.detail.value)
         this.setData({
             value: e.detail.value
         })
@@ -34,10 +33,18 @@ Page({
         this.setData({
             account: options.id
         })
+        wx.setNavigationBarTitle({
+            title: this.data.account
+        })
+        this.getNewList()
     },
-
-
+    getNewList(){
+        var targetText = 'p2p-' + this.data.account;
+        var list = app.globalData.chatData.msgs[targetText];
+        this.setData({list})
+    },
     sendMsg(text) {
+        var _this = this;
         var msg = app.globalData.nim.sendText({
             scene: 'p2p',
             to: this.data.account,
@@ -45,12 +52,14 @@ Page({
             done: sendMsgDone
         });
         console.log('正在发送p2p text消息, id=' + msg.idClient);
+        console.log(msg)
         // pushMsg(msg);
         function sendMsgDone(error, msg) {
             console.log(error);
             console.log(msg);
             console.log('发送' + msg.scene + ' ' + msg.type + '消息' + (!error ? '成功' : '失败') + ', id=' + msg.idClient);
-            //pushMsg(msg);
+            app.pushMsg(msg);
+            _this.getNewList()
         }
     },
     /**

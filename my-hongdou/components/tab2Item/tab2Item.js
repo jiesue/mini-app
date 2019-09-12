@@ -16,7 +16,12 @@ Component({
     data: {
 
     },
-
+    create(){
+        console.log('tab2-create')
+    },
+    attached(){
+        console.log('tab2-attached')
+    },
     /**
      * 组件的方法列表
      */
@@ -25,7 +30,7 @@ Component({
             console.log(e.currentTarget.dataset.id)
             var id = e.currentTarget.dataset.id;
             wx.navigateTo({
-                url: '../../pages/video/video?id='+id,
+                url: '../../pages/video/video?id=' + id,
             })
         }
     }

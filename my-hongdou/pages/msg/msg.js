@@ -32,8 +32,8 @@ Page({
         app.globalData.nim = nim = NIM.getInstance({
             // debug: true,   
             appKey: appKey,
-            account: '123',
-            token: '123',
+            account: 'jie',
+            token: 'jie',
             db: true, //若不要开启数据库请设置false。SDK默认为true。
             // privateConf: {}, // 私有化部署方案所需的配置
             onconnect: onConnect,
@@ -65,24 +65,19 @@ Page({
             }
         }
 
-        function pushMsg(msgs) {
-            if (!Array.isArray(msgs)) {
-                msgs = [msgs];
-            }
-            var sessionId = msg[0].scene + '-' + msgs[0].account;
-            data.msgs = data.msgs || {};
-            data.msgs[sessionId] = nim.mergeMsgs(data.msgs[sessionId], msgs);
-        }
+        
 
         function onCustomMsg(msg) {
             // 处理自定义消息
         }
 
-        function onofflinemsgs(e) {
-            console.log('onofflinemsgs', e)
+        function onofflinemsgs(data) {
+            app.pushMsg(data.msgs)
+            console.log('onofflinemsgs', data)
         }
-        function onroamingmsgs(e) {
-            console.log('onroamingmsgs', e)
+        function onroamingmsgs(data) {
+            app.pushMsg(data.msgs)
+            console.log('onroamingmsgs', data)
         }
         function onFriends(obj) {
             console.log('onFriends', obj);
