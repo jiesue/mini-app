@@ -1,4 +1,8 @@
 //app.js
+import AppIm from './utils/appIm.js'
+import {
+    appKey
+} from './config/config.js'
 App({
     onLaunch: function() {
         // 展示本地存储能力
@@ -14,6 +18,8 @@ App({
         })
         // 获取用户信息
 
+        this.initIm(this)
+
     },
     onShow: function(options) {
         console.log(wx.getLaunchOptionsSync())
@@ -23,18 +29,28 @@ App({
         })
 
     },
+    initIm(app) {
+        let options = {
+            app: app,
+            appkey: appKey,
+            account: 'jie1',
+            token: 'jie1',
+        };
+        app.globalData.im = new AppIm(options);
+    },
+
     pushMsg(msgs) {
         if (!Array.isArray(msgs)) {
             msgs = [msgs];
         }
         var sessionId = msgs[0].sessionId;
         // this.globalData.chatData.msgs = this.globalData.chatData.msgs || {};
-        this.globalData.chatData.msgs[sessionId] = this.globalData.nim.mergeMsgs(this.globalData.chatData.msgs[sessionId], msgs);
-        console.log(this.globalData)
+        this.globalData.chatData.msgs[sessionId] = this.globalData.NIM.mergeMsgs(this.globalData.chatData.msgs[sessionId], msgs);
     },
     globalData: {
         userInfo: null,
-        nim: null,
+        im:null,
+        NIM: null,
         chatData: {
             msgs:{}
         }

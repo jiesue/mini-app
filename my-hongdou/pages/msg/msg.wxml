@@ -7,8 +7,9 @@
         <button bindtap="addFriend" type="warn">添加好友</button>
     </view>
     <view class="msgList" wx:for="{{list}}" wx:key="{{index}}">
-        <view class="item" bindtap="toChat" data-id="{{item.account}}">
+        <view class="item" catchtap="toChat" data-id="{{item.account}}">
            好友account： {{item.account}}
         </view>
     </view>
 </view>
+<mask></mask>

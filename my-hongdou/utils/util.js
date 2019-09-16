@@ -17,7 +17,29 @@ const formatNumber = n => {
 function checkLogin() {
     return 'jie'
 }
+
+//类型检测
+function isObj(obj) {
+    return Object.prototype.toString.call(obj) == '[object Object]';
+}
+
+function isFun(fun) {
+    return Object.prototype.toString.call(fun) == '[object Function]';
+}
+
+function isArr(arr) {
+    return Object.prototype.toString.call(arr) == '[object Array]';
+}
+
+function isNum(num) {
+    return Object.prototype.toString.call(num) == '[object Number]';
+}
+
 module.exports = {
     formatTime,
-    checkLogin
+    checkLogin,
+    isNum,
+    isArr,
+    isFun,
+    isObj
 }

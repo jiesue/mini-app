@@ -19,6 +19,9 @@ Page({
             activeIndex: e.currentTarget.dataset.index
         })
     },
+    swiperToLeft(){
+        console.log('left')
+    },
     swiperChange(e) {
         
         if (e.detail.source == 'touch') {//滑动的时候执行改变tab

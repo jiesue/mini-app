@@ -1,6 +1,6 @@
 <!--pages/chat/chat.wxml-->
 <view class="chat-container">
-  <scroll-view class="chatList-w" scroll-y="true">
+  <scroll-view class="chatList-w" scroll-y="true" scroll-top='{{scrolltop}}'>
     <view class="item {{item.flow=='in'?'left':'right'}}" wx:for="{{list}}" wx:key="{{index}}">
       <block wx:if="{{item.flow=='in'}}">
         <view class="avatar-w">

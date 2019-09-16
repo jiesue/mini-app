@@ -1,5 +1,6 @@
 // pages/chat/chat.js
 let app = getApp()
+import pubSub from '../../utils/pubSub'
 import {
     avatarUrl
 } from '../../config/baseUrl.js'
@@ -12,6 +13,7 @@ Page({
         value: '',
         account: null,
         avatarUrl: avatarUrl,
+        scrollTop:0,
         list: []
     },
     send() {
@@ -41,11 +43,13 @@ Page({
     getNewList(){
         var targetText = 'p2p-' + this.data.account;
         var list = app.globalData.chatData.msgs[targetText];
-        this.setData({list})
+        this.setData({list,scrollTop:0})
+
     },
+   
     sendMsg(text) {
         var _this = this;
-        var msg = app.globalData.nim.sendText({
+        var msg = app.globalData.NIM.sendText({
             scene: 'p2p',
             to: this.data.account,
             text: text,
@@ -66,7 +70,7 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function() {
-
+        pubSub.on('getNewList', this.getNewList)
     },
 
     /**

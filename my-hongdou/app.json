@@ -6,7 +6,9 @@
         "pages/audio/audio",
         "pages/video/video",
         "pages/search/search",
-        "pages/login/login"
+        "pages/login/login",
+        "pages/chat/chat"
+
     ],
     "window": {
         "backgroundTextStyle": "light",
