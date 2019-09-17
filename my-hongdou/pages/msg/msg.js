@@ -49,7 +49,6 @@ Page({
             });
         */
         this.addOnIm()
-        console.log(app.globalData.im.connect)
         app.globalData.im.connect();
     },
 

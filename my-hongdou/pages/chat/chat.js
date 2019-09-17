@@ -13,8 +13,30 @@ Page({
         value: '',
         account: null,
         avatarUrl: avatarUrl,
-        scrollTop:0,
-        list: []
+        scrollTop: 0,
+        list: [{
+            text: 123
+        }, {
+            text: 123
+        }, {
+            text: 123
+        }, {
+            text: 123
+        }, {
+            text: 123
+        }, {
+            text: 123
+        }, {
+            text: 123
+        }, {
+            text: 123
+        }, {
+            text: 123
+        }, {
+            text: 123
+        }, {
+            text: 123
+        }]
     },
     send() {
         this.sendMsg(this.data.value)
@@ -40,13 +62,19 @@ Page({
         })
         this.getNewList()
     },
-    getNewList(){
+    getNewList() {
         var targetText = 'p2p-' + this.data.account;
-        var list = app.globalData.chatData.msgs[targetText];
-        this.setData({list,scrollTop:0})
+        var list = app.globalData.chatData.msgs[targetText] || [];
+        this.setData({
+            list
+        })
+        console.log(list.length)
+        this.setData({
+            scrolltop: 1000 + list.length * 300
+        })
 
     },
-   
+
     sendMsg(text) {
         var _this = this;
         var msg = app.globalData.NIM.sendText({

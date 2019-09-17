@@ -33,8 +33,8 @@ App({
         let options = {
             app: app,
             appkey: appKey,
-            account: 'jie1',
-            token: 'jie1',
+            account: 'jie',
+            token: 'jie',
         };
         app.globalData.im = new AppIm(options);
     },
