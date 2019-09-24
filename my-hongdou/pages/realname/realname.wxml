@@ -1,0 +1,24 @@
+<view class='user-suggest'>
+  <view class='suggest-title'>问题反馈</view>
+  <view class='suggest-top'>
+    <textarea bindinput="textAreaBlur" value='{{text}}' placeholder-class="place-holder" placeholder="请详细描述您所遇到的问题与情况，感谢您提出的宝贵意见！" />
+  </view>
+  <view class='suggest-title'>联系电话</view>
+  <view class='suggest-tel'>
+    <input bindinput="phoneInput" maxlength='11' value="{{phone}}" placeholder-class="place-holder" placeholder="请您输入您的联系方式，方便我们联系您！" />
+  </view>
+  <view class='suggest-title'>反馈截图</view>
+  <view class="upload-box flex-row">
+    <view class="upload-list upload-btn" catchtap="chooseImageUpload"  wx:if="{{detailPics.length<3}}">
+      <image mode='aspectFill' src='../../img/shangchuan.png' class="upload-btn-img"></image>
+    </view>
+    <view class="upload-list rel"  wx:for="{{detailPics}}" wx:key="{{index}}">
+       <image mode='aspectFill' src='{{item}}' class="upload-list-img"></image>
+       <image mode='aspectFill' src='../../img/guanbi.png' class="abs close-img" data-index="{{index}}" catchtap="delImg"></image>
+    </view>
+  </view>
+  <view class="tijiao"></view>
+  <view class='suggest-btn active' catchtap='submitSuggest'>
+    提交
+  </view>
+</view>

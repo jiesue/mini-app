@@ -35,6 +35,24 @@ Page({
     audioPlay: function() {
         this.audioCtx.play()
     },
+    bgPlay() {
+        // wx.playBackgroundAudio({
+        //     dataUrl: this.data.src,
+        //     title: '123',
+        //     coverImgUrl: this.data.poster
+        // })
+        var BackgroundAudioManager  = wx.getBackgroundAudioManager();
+        BackgroundAudioManager .src = this.data.src;
+        setTimeout(function() {
+            console.log(BackgroundAudioManager )
+            BackgroundAudioManager .onStop(function() {
+                console.log('000')
+            })
+        }, 3000)
+    },
+    bgStop() {
+        wx.stopBackgroundAudio()
+    },
     audioPause: function() {
         this.audioCtx.pause()
     },
@@ -46,8 +64,8 @@ Page({
     },
     download() {
         wx.downloadFile({
-            url: this.data.src, 
-            filePath:'d:',
+            url: this.data.src,
+            filePath: 'd:',
             success(res) {
                 // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容   
                 console.log(res)
