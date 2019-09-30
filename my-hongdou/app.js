@@ -48,11 +48,24 @@ App({
         this.globalData.chatData.msgs[sessionId] = this.globalData.NIM.mergeMsgs(this.globalData.chatData.msgs[sessionId], msgs);
     },
     globalData: {
-        userInfo: null,
-        im:null,
-        NIM: null,
-        chatData: {
-            msgs:{}
-        }
+        NIM: '',
+        im: {},
+        initIm: initIm,
+        pageData: {
+            msg: {
+                member: [],
+                friend: []
+            }
+        },
+        userInfo: {},
     }
 })
+
+function initIm(app) {
+    let options = {
+        app: app,
+        appkey: appKey
+    };
+    console.log('initImoptions', options);
+    app.globalData.im = new AppIm(options);
+}
