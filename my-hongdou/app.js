@@ -1,5 +1,5 @@
 //app.js
-import AppIm from './utils/appIm.js'
+import AppIm from './utils/yunxin.js/index.js'
 import {
     appKey
 } from './config/config.js'
