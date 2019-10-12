@@ -28,7 +28,7 @@ export default class AppIm {
         getInitData((token, uid) => {
             //   options.token = token;
             //   options.account = uid;
-            console.log(token)
+            console.log(uid)
             if (self) return;
             options = Object.assign(options, params);
             app = params.app;
@@ -183,7 +183,7 @@ export default class AppIm {
             shouldCountNotifyUnread: this.shouldCountNotifyUnread,
             // 会话
             onsessions: this.onsessions,
-            //onupdatesession: this.onupdatesession,
+            // onupdatesession: this.onupdatesession,
             // 漫游信息接收
             syncRoamingMsgs: true,
             // 消息
@@ -205,9 +205,13 @@ export default class AppIm {
             onpushevents: this.onpushevents,
         })
     }
+    onupdatesession(){
+        console.log('onupdatesession')
+    }
     onconnect() {
         clearCheckHadCbTimeout();
         console.log('im connected!');
+        console.log(arguments)
         self.status = 'connected';
         onConnectData = arguments[0];
         clearInter();
@@ -360,6 +364,7 @@ export default class AppIm {
      * [ {id:"p2p-liuxuanlin",lastMsg:{from:'wujie',text:'222',to:"liuxuanlin"}} ]
      */
     onsessions() {
+        console.log('1111111111111111111111111111111')
         console.log(arguments[0], '聊天列表');
         var value = wx.getStorageSync('msgHadShow');
         let data = arguments[0];

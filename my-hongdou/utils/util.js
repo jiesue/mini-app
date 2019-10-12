@@ -15,7 +15,7 @@ const formatNumber = n => {
 }
 
 function checkLogin() {
-    return 'jie'
+    return 'jie checkLogin'
 }
 
 //类型检测

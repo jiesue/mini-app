@@ -1,8 +1,9 @@
 {
     "pages": [
+        "pages/msg/msg",
         "pages/index/index",
         "pages/audio/audio",
-        "pages/msg/msg",
+       
         "pages/me/me",
         "pages/video/video",
         "pages/realname/realname",

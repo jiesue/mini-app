@@ -6,9 +6,17 @@
         <input value="{{ps}}" bindinput="psInput"></input>
         <button bindtap="addFriend" type="warn">添加好友</button>
     </view>
-    <view class="msgList" wx:for="{{list}}" wx:key="{{index}}">
+     <text>会话list</text>
+    <view class="msgList" wx:for="{{sessionList}}" wx:key="{{index}}">
+   
         <view class="item" catchtap="toChat" data-id="{{item.account}}">
-           好友account： {{item.account}}
+            会话account： {{item.account}} / 0
+        </view>
+    </view>
+     <text>好友list</text>
+    <view class="msgList" wx:for="{{friendList}}" wx:key="{{index}}">
+        <view class="item" catchtap="toChat" data-id="{{item.account}}">
+            好友account： {{item.account}}
         </view>
     </view>
 </view>

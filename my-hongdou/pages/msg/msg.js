@@ -12,7 +12,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        list: [],
+        friendList: app.globalData.pageData.msg.friend,
+        sessionList: app.globalData.pageData.msg.member,
         ps: '',
         account: ''
     },
@@ -27,36 +28,14 @@ Page({
      */
     onLoad: function(options) {
         let _this = this;
-        var data = {};
-        // 注意这里, 引入的 SDK 文件不一样的话, 你可能需要使用 SDK.NIM.getInstance 来调用接口
-        /*  var nim;
-            app.globalData.nim = nim = NIM.getInstance({
-                // debug: true,   
-                appKey: appKey,
-                account: 'jie1',
-                token: 'jie1',
-                db: true, //若不要开启数据库请设置false。SDK默认为true。
-                // privateConf: {}, // 私有化部署方案所需的配置
-                onconnect: onConnect,
-                onwillreconnect: onwillreconnect,
-                ondisconnect: onDisconnect,
-                onerror: onError,
-                onsyncdone: onSyncDone,
-                onroamingmsgs: onroamingmsgs,
-                onofflinemsgs: onofflinemsgs,
-                onmsg: onmsg,
-                onfriends: onFriends
-            });
-        */
-        this.addOnIm()
-        app.globalData.im.connect();
+        
     },
 
     addOnIm() {
         console.log('addOnIm')
         pubSub.on('onconnect', this.onconnect);
-        // pubSub.on('onupdatesession', this.onUpdateSession);
-        // pubSub.on('onsessions', this.onSessions);
+      
+        pubSub.on('onsessions', this.onsessions);
         pubSub.on('onfriends', this.onfriends);
         // pubSub.on('onsyncfriendaction', this.onSyncFriendAction);
         // pubSub.on('onAppFriend', this.onAppFriend);
@@ -69,6 +48,7 @@ Page({
         pubSub.on('onsyncdone', this.onsyncdone); 
         pubSub.on('onroamingmsgs', this.onroamingmsgs); 
         pubSub.on('onofflinemsgs', this.onofflinemsgs);
+        pubSub.on('onsysmsgunread', this.onsysmsgunread);
     },
     removeOnIm() {
         // pubSub.remove('onconnect', this.onconnect);
@@ -81,27 +61,17 @@ Page({
     },
 
     ///====================
+    onsysmsgunread(obj){
+        console.log('onsysmsgunread',obj)
+    },
+
     onmsg(msg) {
         console.log('收到消息', msg.scene, msg.type, msg);
         app.pushMsg(msg)
         pubSub.emit('getNewList')
-        // this.setData({})
-        // switch (msg.type) {
-        //     case 'custom':
-        //         onCustomMsg(msg);
-        //         break;
-        //     case 'notification':
-        //         // 处理群通知消息
-        //         onTeamNotificationMsg(msg);
-        //         break;
-        //         // 其它case
-        //     default:
-        //         break;
-        // }
     },
 
-
-
+   
     oncustommsg(msg) {
         // 处理自定义消息
     },
@@ -118,11 +88,20 @@ Page({
 
     onfriends(obj) {
         console.log('onFriends', obj);
+        app.globalData.pageData.msg.friend = obj;
+
+        this.setData({
+            friendList: app.globalData.pageData.msg.friend
+        })
+       
+      
+    },
+    onsessions(obj){
+        console.log('onSessions', obj);
         this.setData({
             list: obj
         })
     },
-
     onsyncdone() {
         console.log('同步完成');
     },
@@ -173,6 +152,8 @@ Page({
     onerror(error) {
         console.log(error);
     },
+
+    
     ///=========================
     accountInput(e) {
         this.setData({

@@ -14,29 +14,7 @@ Page({
         account: null,
         avatarUrl: avatarUrl,
         scrollTop: 0,
-        list: [{
-            text: 123
-        }, {
-            text: 123
-        }, {
-            text: 123
-        }, {
-            text: 123
-        }, {
-            text: 123
-        }, {
-            text: 123
-        }, {
-            text: 123
-        }, {
-            text: 123
-        }, {
-            text: 123
-        }, {
-            text: 123
-        }, {
-            text: 123
-        }]
+        list: []
     },
     send() {
         this.sendMsg(this.data.value)
@@ -62,9 +40,11 @@ Page({
         })
         this.getNewList()
     },
+   
+
     getNewList() {
         var targetText = 'p2p-' + this.data.account;
-        var list = app.globalData.chatData.msgs[targetText] || [];
+        var list = app.globalData.pageData.msg.member[targetText] || [];
         this.setData({
             list
         })
@@ -84,11 +64,7 @@ Page({
             done: sendMsgDone
         });
         console.log('正在发送p2p text消息, id=' + msg.idClient);
-        console.log(msg)
-        // pushMsg(msg);
         function sendMsgDone(error, msg) {
-            console.log(error);
-            console.log(msg);
             console.log('发送' + msg.scene + ' ' + msg.type + '消息' + (!error ? '成功' : '失败') + ', id=' + msg.idClient);
             app.pushMsg(msg);
             _this.getNewList()
