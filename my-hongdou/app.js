@@ -1,8 +1,9 @@
 //app.js
-import AppIm from './utils/yunxin.js'
+
 import {
     appKey
 } from './config/config.js'
+
 let app = getApp();
 App({
     onLaunch: function() {
@@ -11,13 +12,13 @@ App({
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
         wx.getLaunchOptionsSync()
-        // 登录
+            // 登录
         wx.login({
-            success: res => {
-                // 发送 res.code 到后台换取 openId, sessionKey, unionId
-            }
-        })
-        // 获取用户信息
+                success: res => {
+                    // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                }
+            })
+            // 获取用户信息
     },
     onShow: function(options) {
         // console.log(wx.getLaunchOptionsSync())

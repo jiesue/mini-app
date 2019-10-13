@@ -28,7 +28,12 @@ Page({
      */
     onLoad: function(options) {
         let _this = this;
-        
+        this.addOnIm()
+        this.initYunxin()
+
+    },
+    initYunxin() {
+        new appIm({ appKey, token: 123, account: 123 }).connectIm();
     },
     addOnIm() {
         console.log('addOnIm')
@@ -38,13 +43,13 @@ Page({
         // pubSub.on('onsyncfriendaction', this.onSyncFriendAction);
         // pubSub.on('onAppFriend', this.onAppFriend);
         // pubSub.on('onAppMember', this.onAppMember);
-        
-        pubSub.on('onmsg', this.onmsg); 
-        pubSub.on('ondisconnect', this.ondisconnect); 
-        pubSub.on('onerror', this.onerror); 
-        pubSub.on('onwillreconnect', this.onwillreconnect); 
-        pubSub.on('onsyncdone', this.onsyncdone); 
-        pubSub.on('onroamingmsgs', this.onroamingmsgs); 
+
+        pubSub.on('onmsg', this.onmsg);
+        pubSub.on('ondisconnect', this.ondisconnect);
+        pubSub.on('onerror', this.onerror);
+        pubSub.on('onwillreconnect', this.onwillreconnect);
+        pubSub.on('onsyncdone', this.onsyncdone);
+        pubSub.on('onroamingmsgs', this.onroamingmsgs);
         pubSub.on('onofflinemsgs', this.onofflinemsgs);
         pubSub.on('onsysmsgunread', this.onsysmsgunread);
     },
@@ -59,8 +64,8 @@ Page({
     },
 
     ///====================
-    onsysmsgunread(obj){
-        console.log('onsysmsgunread',obj)
+    onsysmsgunread(obj) {
+        console.log('onsysmsgunread', obj)
     },
 
     onmsg(msg) {
@@ -69,7 +74,7 @@ Page({
         pubSub.emit('getNewList')
     },
 
-   
+
     oncustommsg(msg) {
         // 处理自定义消息
     },
@@ -86,15 +91,13 @@ Page({
 
     onfriends(obj) {
         console.log('onFriends', obj);
-        app.globalData.pageData.msg.friend = obj;
-
         this.setData({
-            friendList: app.globalData.pageData.msg.friend
+            friendList: obj
         })
-       
-      
+
+
     },
-    onsessions(obj){
+    onsessions(obj) {
         console.log('onSessions', obj);
         this.setData({
             list: obj
@@ -151,7 +154,7 @@ Page({
         console.log(error);
     },
 
-    
+
     ///=========================
     accountInput(e) {
         this.setData({
