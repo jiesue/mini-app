@@ -1,9 +1,11 @@
-import pubSub from './js/pubSub.js';
+import pubSub from './pubSub.js';
 import { appKey } from '../config/config.js';
 import {
     isFun, loadScript
-} from '@/js/fun.js';
-window.yunxin = false;
+} from './fun.js';
+const app = getApp();
+ app.yunxin = false;
+
 let self = false;
 let option = {};
 let disconnectCallback = '';
@@ -19,7 +21,7 @@ export default class AppIm {
             } else {
                 disconnectCallback = '';
             };
-            if (window.yunxin) {
+            if (app.yunxin) {
                 yunxin.disconnect();
             } else {
                 isFun(cb) && cb();
@@ -33,7 +35,7 @@ export default class AppIm {
         console.log(appKey,
             option.token,
             option.account)
-        window.yunxin = NIM.getInstance({
+        app.yunxin = NIM.getInstance({
             // 初始化SDk
             // debug           : true,
             appKey: appKey,

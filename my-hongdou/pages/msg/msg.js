@@ -1,5 +1,5 @@
 // pages/msg/msg.js
-import NIM from '../../utils/NIM_Web_NIM_weixin_v6.8.0.js';
+import appIm from '../../utils/yunxin.js'
 import pubSub from '../../utils/pubSub'
 import {
     appKey
@@ -12,8 +12,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        friendList: app.globalData.pageData.msg.friend,
-        sessionList: app.globalData.pageData.msg.member,
+        friendList: [],
+        sessionList: [],
         ps: '',
         account: ''
     },
@@ -30,11 +30,9 @@ Page({
         let _this = this;
         
     },
-
     addOnIm() {
         console.log('addOnIm')
         pubSub.on('onconnect', this.onconnect);
-      
         pubSub.on('onsessions', this.onsessions);
         pubSub.on('onfriends', this.onfriends);
         // pubSub.on('onsyncfriendaction', this.onSyncFriendAction);

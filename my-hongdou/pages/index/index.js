@@ -19,12 +19,12 @@ Page({
             activeIndex: e.currentTarget.dataset.index
         })
     },
-    swiperToLeft(){
+    swiperToLeft() {
         console.log('left')
     },
     swiperChange(e) {
-        
-        if (e.detail.source == 'touch') {//滑动的时候执行改变tab
+
+        if (e.detail.source == 'touch') { //滑动的时候执行改变tab
             this.setData({
                 activeIndex: e.detail.current
             })
@@ -49,7 +49,7 @@ Page({
                 wx.navigateTo({
                     url: '../login/login',
                 })
-            },1000)
+            }, 1000)
 
         }
     }
