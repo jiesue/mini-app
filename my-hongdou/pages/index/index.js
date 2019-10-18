@@ -37,8 +37,8 @@ Page({
         })
     },
     onLoad: function() {
-        console.log(util.checkLogin())
-        if (app.globalData.userInfo) {
+      console.log(util.checkLogin())
+      if (util.checkLogin()) {
             this.setData({
                 userInfo: app.globalData.userInfo,
                 hasUserInfo: true
@@ -46,10 +46,10 @@ Page({
 
         } else {
             setTimeout(() => {
-                wx.navigateTo({
+                wx.redirectTo({
                     url: '../login/login',
                 })
-            }, 1000)
+            }, 500)
 
         }
     }

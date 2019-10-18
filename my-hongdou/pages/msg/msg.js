@@ -33,13 +33,16 @@ Page({
 
     },
     initYunxin() {
-        new appIm({ appKey, token: 123, account: 123 }).connectIm();
+      var user = wx.getStorageSync('user')
+      var pwd = wx.getStorageSync('pwd')
+        new appIm({ appKey, token: user, account: pwd }).connectIm();
     },
     addOnIm() {
         console.log('addOnIm')
         pubSub.on('onconnect', this.onconnect);
         pubSub.on('onsessions', this.onsessions);
-        pubSub.on('onfriends', this.onfriends);
+      pubSub.on('onfriends', this.onfriends);
+      pubSub.on('onupdatesession', this.onupdatesession);
         // pubSub.on('onsyncfriendaction', this.onSyncFriendAction);
         // pubSub.on('onAppFriend', this.onAppFriend);
         // pubSub.on('onAppMember', this.onAppMember);
@@ -73,7 +76,15 @@ Page({
         app.pushMsg(msg)
         pubSub.emit('getNewList')
     },
-
+  onupdatesession(obj){
+    app.yunxin.mergeSessions(app.globalData.msgs.sessions,obj.lastMsg);
+    console.log(app.yunxin.mergeSessions)
+    console.log('onupdatesession', obj)
+    console.log('all sessions', app.globalData.msgs.sessions)
+    this.setData({
+      sessionList: app.globalData.msgs.sessions
+    })
+  },
 
     oncustommsg(msg) {
         // 处理自定义消息
@@ -100,7 +111,7 @@ Page({
     onsessions(obj) {
         console.log('onSessions', obj);
         this.setData({
-            list: obj
+          sessionList: obj.lastMsg
         })
     },
     onsyncdone() {

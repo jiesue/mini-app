@@ -8,25 +8,40 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+      avatar:null,
+      user:null,
+      pwd:null,
+      nick:null,
     },
 
     toReal() {
-        wx.switchTab({
-            url: '../index/index',
-        })
+      wx.showToast({
+        title: '实名认证！',
+        icon: 'success',
+        duration: 2000
+      })
+
     },
     /**
      * 生命周期函数--监听页面加载
      */
-    onload: function (options) {
-
+    onLoad: function (options) {
+      console.log(app.globalData.userInfo);
+      var user = wx.getStorageSync('user')
+      var pwd = wx.getStorageSync('pwd')
+      this.setData({
+        avatar: app.globalData.userInfo.avatarUrl,
+        user,
+        pwd,
+        nick: app.globalData.userInfo.nickName,
+      })
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
+      console.log('onReady')
 
     },
 
@@ -34,6 +49,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+      console.log('onShow')
 
     },
 
@@ -41,6 +57,7 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
+      console.log('onHide')
 
     },
 
@@ -48,6 +65,7 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
+      console.log('onloonUnloadad')
 
     },
 
@@ -55,6 +73,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
+      console.log('ononPullDownRefreshload')
 
     },
 
@@ -62,6 +81,7 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
+      console.log('onReachBottom')
 
     },
 
@@ -69,6 +89,7 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
+      console.log('onShareAppMessage')
 
     }
 })

@@ -9,5 +9,21 @@ button{
     width: 450rpx;
     left: 150rpx;
     opacity: 0;
-
+}
+input{
+  text-align: center;
+}
+.user{
+  position: absolute;
+  background: #eee;
+  top:20%;
+  left: 25%;
+  z-index: 5
+}
+.pwd{
+  position: absolute;
+  background: #eee;
+  top:25%;
+  left: 25%;
+  z-index: 5
 }

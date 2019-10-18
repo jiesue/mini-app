@@ -2,8 +2,13 @@
     <view class="top-bg">
     </view>
     <view class="info-w">
-        <view class="avatar-w"> <image></image> </view>
-        <view class="text-w"></view>
+        <view class="avatar-w"> <image src="{{avatar}}"></image> </view>
+        <view class="text-w">
+          <view class="nick">昵称：{{nick}}</view>
+          <view class="user">账号：{{user}}</view>
+          <view class="pwd">密码：{{pwd}}</view>
+        
+        </view>
         <view class="operate" bindtap="toReal"></view>
     </view>
     <view class="menu"></view>

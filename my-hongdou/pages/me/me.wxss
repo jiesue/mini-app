@@ -32,13 +32,13 @@
 .avatar-w {
     width: 146rpx;
     height: 146rpx;
-    border: 2rpx solid rgba(255, 57, 57, 1);
+    /* border: 2rpx solid rgba(255, 57, 57, 1); */
     border-radius: 73rpx;
 }
 
 .avatar-w image {
-    width: 130rpx;
-    height: 130rpx;
+    width: 146rpx;
+    height: 146rpx;
     border-radius: 50%;
 }
 .info-w .text-w{
@@ -46,6 +46,7 @@
     height: 220rpx;
     border:1px solid red;
     margin-left: 30rpx;
+    text-align: center;
 }
 .info-w  .operate{
       width: 100rpx;

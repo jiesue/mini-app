@@ -1,17 +1,19 @@
 {
     "pages": [
-        "pages/msg/msg",
         "pages/index/index",
+        "pages/login/login",
+        "pages/msg/msg",
+      
         "pages/audio/audio",
         "pages/me/me",
         "pages/video/video",
         "pages/realname/realname",
         "pages/search/search",
-        "pages/login/login",
+       
         "pages/chat/chat"
     ],
     "window": {
-        "backgroundTextStyle": "light",
+        "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "红豆",
         "navigationBarTextStyle": "black"

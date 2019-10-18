@@ -44,7 +44,7 @@ Page({
 
     getNewList() {
         var targetText = 'p2p-' + this.data.account;
-        var list = app.globalData.pageData.msg.member[targetText] || [];
+        var list = app.globalData.msgs.member[targetText] || [];
         this.setData({
             list
         })
@@ -57,7 +57,7 @@ Page({
 
     sendMsg(text) {
         var _this = this;
-        var msg = app.globalData.NIM.sendText({
+        var msg = app.yunxin.sendText({
             scene: 'p2p',
             to: this.data.account,
             text: text,

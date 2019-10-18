@@ -9,8 +9,8 @@
      <text>会话list</text>
     <view class="msgList" wx:for="{{sessionList}}" wx:key="{{index}}">
    
-        <view class="item" catchtap="toChat" data-id="{{item.account}}">
-            会话account： {{item.account}} / 0
+        <view class="item" catchtap="toChat" data-id="{{item.to}}">
+            会话account： {{item.to}} / {{item.unread}}
         </view>
     </view>
      <text>好友list</text>
