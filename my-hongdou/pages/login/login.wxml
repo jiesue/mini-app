@@ -1,6 +1,6 @@
 <!--pages/login/login.wxml-->
 <image src="../../img/login-bg.png">
 </image>
-<input class="user" bindblur="userblur" auto-focus="" placeholder="user" />
-<input class="pwd" bindblur="pwdblur" placeholder="pwd" />
+<input class="user" bindblur="userblur" auto-focus="" value="jie" placeholder="user" />
+<input class="pwd" bindblur="pwdblur" placeholder="pwd" value="jie" />
 <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="login" plain='true'>登录</button>

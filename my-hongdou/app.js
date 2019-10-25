@@ -45,7 +45,7 @@ App({
     msgs: {
       member: [],
       friends: [],
-      sessions:[],
+      sessions:[]
     }
   }
 })

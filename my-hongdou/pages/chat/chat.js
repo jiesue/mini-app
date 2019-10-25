@@ -44,6 +44,7 @@ Page({
 
     getNewList() {
         var targetText = 'p2p-' + this.data.account;
+      app.yunxin.setCurrSession(targetText)
         var list = app.globalData.msgs.member[targetText] || [];
         this.setData({
             list
@@ -88,14 +89,15 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide: function() {
-
+      
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
     onUnload: function() {
-
+      var targetText = 'p2p-' + this.data.account;
+      app.yunxin.resetSessionUnread(targetText)
     },
 
     /**
